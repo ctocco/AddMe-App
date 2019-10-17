@@ -1,4 +1,5 @@
 import React from "react";
+import NavBar from "./components/NavBar/NavBar";
 import UserForm from "../src/components/UserForm";
 import { Router, Link } from "@reach/router";
 import DisplayUsers from "../src/components/DisplayUsers";
