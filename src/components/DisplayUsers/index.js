@@ -1,8 +1,7 @@
 import React from "react";
 import User from "../User";
 import EditUser from "../EditUser";
-import { useDispatch, useSelector } from "react-redux";
-import { delete_user } from "../../redux/action_creators/actions";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -14,8 +13,6 @@ const Container = styled.div`
 
 const DisplayUsers = () => {
   const users = useSelector(state => state.user);
-  const dispatch = useDispatch();
-  console.log(users);
 
   return (
     <Container>
