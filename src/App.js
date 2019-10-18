@@ -1,34 +1,30 @@
 import React from "react";
-import NavBar from "./components/NavBar/NavBar";
+import NavBar from "../src/components/NavBar";
 import UserForm from "../src/components/UserForm";
+import Home from "../src/components/Home";
 import { Router, Link } from "@reach/router";
 import DisplayUsers from "../src/components/DisplayUsers";
 import EditUser from "../src/components/EditUser";
 import styled from "styled-components";
 
-const Nav = styled.nav`
-  display: flex;
-  justify-content: flex-end;
-  background: #e8b7a2;
-  height: 50px;
-  align-items: center;
+const AppContainer = styled.div`
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: auto;
+  border: 1px red solid;
 `;
 
 const App = () => {
   return (
-    <div className="App">
-      <Nav>
-        <Link to="/">
-          <h3>Admin</h3>
-        </Link>{" "}
-        | <Link to="displayusers">Display Users</Link>
-      </Nav>
+    <AppContainer>
+      <NavBar />
       <Router>
-        <UserForm path="/" />
+        <Home path="/" />
+        <UserForm path="addusers" />
         <DisplayUsers path="/displayusers" />
-        <EditUser path="/edituser/:id" />
+        <EditUser path="/edituser" />
       </Router>
-    </div>
+    </AppContainer>
   );
 };
 

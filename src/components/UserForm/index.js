@@ -85,7 +85,6 @@ const Input = styled.input`
 const UserForm = () => {
   const dispatch = useDispatch();
   const listOfUsers = useSelector(state => state.user);
-
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "@reach/router";
 import styled from "styled-components";
 import { update_user } from "../../redux/action_creators/actions";
 import { connect } from "react-redux";
