@@ -6,7 +6,7 @@ import {
   waitForElement,
   cleanup
 } from "@testing-library/react";
-import NavBar from "./NavBar";
+import NavBar from "./index";
 
 afterEach(cleanup);
 
@@ -15,6 +15,6 @@ test("renders", () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-// it("inserts text in H1", () => {
-//   const { getByTestId, getByText } = render(<NavBar text="Hello!" />);
-// });
+it("inserts text in H1", () => {
+  const { getByTestId, getByText } = render(<NavBar text="Hello!" />);
+});
