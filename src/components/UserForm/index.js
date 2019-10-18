@@ -82,7 +82,7 @@ const Input = styled.input`
   }
 `;
 
-const searchParams = () => {
+const UserForm = () => {
   const dispatch = useDispatch();
   const listOfUsers = useSelector(state => state.user);
 
@@ -175,4 +175,4 @@ const searchParams = () => {
   );
 };
 
-export default searchParams;
+export default UserForm;
