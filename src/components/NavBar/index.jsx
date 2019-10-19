@@ -10,10 +10,16 @@ const Nav = styled.nav`
   display: grid;
   background: #39555b;
   grid-template-columns: auto;
-  grid-template-rows: 200px 200px auto;
+  grid-template-rows: 200px 200px 600px;
 `;
 
-const NavLink = styled.a`
+const LogoContainer = styled.div`
+  display: grid;
+  grid-temlate-columns: 1fr;
+  grid-template-rows: 150px auto;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
   color: white;
 `;
 
@@ -21,32 +27,49 @@ const Circle = styled.div`
   display: flex;
   justify-content: center;
   background: #ddd;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+`;
+
+const NavLink = styled.a`
+  color: white;
+  padding-left: 10px;
+`;
+
+const LinksContainer = styled.section`
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  border-top: 1px solid white;
+  padding: 20px;
+  justify-content: center;
 `;
 
 const NavBar = () => {
   return (
     <Nav>
-      <div>
+      <LogoContainer>
         <Circle>
           <img src={key} />
         </Circle>
-      </div>
-      <div>
-        <h1>Links</h1>
+        <h1>Admin</h1>
+      </LogoContainer>
+
+      <LinksContainer>
         <Link to="/">
+          <img src={home} />
           <NavLink>Home</NavLink>
         </Link>
-        |{" "}
-        <Link to="/displayusers">
+        <Link to="/viewusers">
+          <img src={view_users} />
           <NavLink>View Users</NavLink>
         </Link>
         <Link to="/addusers">
-          <NavLink> Add Users</NavLink>
+          <img src={add_user} />
+          <NavLink>Add Users</NavLink>
         </Link>
-      </div>
+      </LinksContainer>
+
       <div>Rest</div>
     </Nav>
   );

@@ -29,6 +29,11 @@ const emailFail = {
   }
 };
 
+const AddUserContainer = styled.div`
+  display: grid;
+  grid-template-rows: 200px auto;
+`;
+
 const Submit = styled.button`
   -webkit-appearance: none;
   box-shadow: inset 0px 1px 0px 0px #ffffff;
@@ -113,64 +118,68 @@ const UserForm = () => {
   };
 
   return (
-    <div>
-      <Modal
-        isOpen={modalSucessIsOpen}
-        ariaHideApp={false}
-        style={userSuccess}
-        contentLabel="User Successful"
-      >
-        User Succesfully Added
-      </Modal>
-      <Modal
-        isOpen={modalDuplicateEmailOpen}
-        ariaHideApp={false}
-        style={emailFail}
-        contentLabel="User Successful"
-      >
-        <h1>Duplicate Email</h1>
-        Please Enter another Email
-      </Modal>
-      <h3>Add User</h3>
-      <form
-        onSubmit={event => {
-          event.preventDefault();
-          saveUser();
-        }}
-      >
-        <Input
-          id="name"
-          value={name}
-          placeholder="name"
-          onChange={event => {
-            setName(event.target.value);
+    <AddUserContainer>
+      <header>
+        <Modal
+          isOpen={modalSucessIsOpen}
+          ariaHideApp={false}
+          style={userSuccess}
+          contentLabel="User Successful"
+        >
+          User Succesfully Added
+        </Modal>
+        <Modal
+          isOpen={modalDuplicateEmailOpen}
+          ariaHideApp={false}
+          style={emailFail}
+          contentLabel="User Successful"
+        >
+          <h1>Duplicate Email</h1>
+          Please Enter another Email
+        </Modal>
+      </header>
+      <div>
+        <h3>Add User</h3>
+        <form
+          onSubmit={event => {
+            event.preventDefault();
+            saveUser();
           }}
-          required
-        />
-        <Input
-          id="password"
-          value={password}
-          placeholder="password"
-          onChange={event => {
-            setPassword(event.target.value);
-          }}
-          required
-        />
-        <Input
-          id="email"
-          value={email}
-          placeholder="email"
-          onChange={event => {
-            setEmail(event.target.value);
-          }}
-          type="email"
-          required
-        />
-        {/* <Link to={"/showUsers"}> */}
-        <Submit type="submit">Submit</Submit>
-        {/* </Link> */}
-      </form>
-    </div>
+        >
+          <Input
+            id="name"
+            value={name}
+            placeholder="name"
+            onChange={event => {
+              setName(event.target.value);
+            }}
+            required
+          />
+          <Input
+            id="password"
+            value={password}
+            placeholder="password"
+            onChange={event => {
+              setPassword(event.target.value);
+            }}
+            required
+          />
+          <Input
+            id="email"
+            value={email}
+            placeholder="email"
+            onChange={event => {
+              setEmail(event.target.value);
+            }}
+            type="email"
+            required
+          />
+          {/* <Link to={"/showUsers"}> */}
+          <Submit type="submit">Submit</Submit>
+          {/* </Link> */}
+        </form>
+      </div>
+    </AddUserContainer>
   );
 };
 

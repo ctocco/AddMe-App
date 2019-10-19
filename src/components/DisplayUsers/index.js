@@ -11,13 +11,23 @@ const Container = styled.div`
   flex-wrap: wrap;
 `;
 
+const DisplayUserContainer = styled.div`
+  display: grid;
+  grid-template-rows: 200px auto;
+`;
+
+const UsersContainer = styled.div`
+  border-top: 1px solid grey;
+`;
+
 const DisplayUsers = () => {
   const users = useSelector(state => state.user);
 
   return (
-    <Container>
+    <DisplayUserContainer>
+      <div></div>
       {users.map(user => (
-        <div key={user.id}>
+        <UsersContainer key={user.id}>
           {user.editing ? (
             <EditUser
               key={user.id}
@@ -35,9 +45,9 @@ const DisplayUsers = () => {
               email={user.email}
             />
           )}
-        </div>
+        </UsersContainer>
       ))}
-    </Container>
+    </DisplayUserContainer>
   );
 };
 
