@@ -3,22 +3,66 @@
 exports[`renders 1`] = `
 <DocumentFragment>
   <nav
-    class="sc-bdVaJa kCcGsS"
+    class="sc-bdVaJa doDQFS"
   >
-    <a
-      aria-current="page"
-      href="/"
+    <div
+      class="sc-bwzfXH iXaUif"
     >
-      <h3>
+      <div
+        class="sc-htpNat hZoBaN"
+      >
+        <img
+          src="key.svg"
+        />
+      </div>
+      <h1>
         Admin
-      </h3>
-    </a>
-    | 
-    <a
-      href="/displayusers"
+      </h1>
+    </div>
+    <section
+      class="sc-ifAKCX izJrHi"
     >
-      Display Users
-    </a>
+      <a
+        aria-current="page"
+        href="/"
+      >
+        <img
+          src="home.svg"
+        />
+      </a>
+      <a
+        class="sc-bxivhb gyztPx"
+      >
+        Home
+      </a>
+      <a
+        href="/viewusers"
+      >
+        <img
+          src="view_users.svg"
+        />
+      </a>
+      <a
+        class="sc-bxivhb gyztPx"
+      >
+        View Users
+      </a>
+      <a
+        href="/addusers"
+      >
+        <img
+          src="add_user.svg"
+        />
+      </a>
+      <a
+        class="sc-bxivhb gyztPx"
+      >
+        Add Users
+      </a>
+    </section>
+    <div>
+      Rest
+    </div>
   </nav>
 </DocumentFragment>
 `;
