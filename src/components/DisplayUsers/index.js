@@ -25,7 +25,7 @@ const DisplayUsers = () => {
 
   return (
     <DisplayUserContainer>
-      <div></div>
+      <header></header>
       {users.map(user => (
         <UsersContainer key={user.id}>
           {user.editing ? (

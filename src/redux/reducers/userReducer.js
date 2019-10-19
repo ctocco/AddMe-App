@@ -1,4 +1,8 @@
-const INITIAL_STATE = [];
+import { combineReducers } from "redux";
+
+const INITIAL_STATE = [
+  { id: 1, name: "claudio", password: "hello", email: "cl@combineReducers.com" }
+];
 
 const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {

@@ -7,6 +7,7 @@ import DisplayUsers from "../src/components/DisplayUsers";
 import EditUser from "../src/components/EditUser";
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
+
 const GlobalStyles = createGlobalStyle`
 html {
   margin: 0;

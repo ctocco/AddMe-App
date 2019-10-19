@@ -5,9 +5,11 @@ import { connect } from "react-redux";
 
 const Ul = styled.ul`
   list-style-type: none;
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr 1fr 1fr;
+  width: 90%;
+  margin: 0;
+  height: 2rem;
 `;
 
 const Delete = styled.button`
@@ -22,14 +24,31 @@ const Delete = styled.button`
   font-family: inherit;
   font-size: 1rem;
   text-decoration: none;
+  height: 3rem;
+`;
+const Edit = styled.button`
+  -webkit-appearance: none;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background-color: red;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+  text-decoration: none;
+  height: 3rem;
 `;
 
 const List = styled.li`
   display: flex;
-  margin: 0 10px;
+  margin: 10px;
   width: 100%;
   align-items: center;
-  padding: 0 5px;
+  margin: 0;
+  border: 1px solid red;
+  height: 100%;
 `;
 
 class User extends PureComponent {
@@ -41,9 +60,9 @@ class User extends PureComponent {
           <List>{this.props.name}</List>
           <List>{this.props.password}</List>
           <List>{this.props.email}</List>
-          <button onClick={() => this.props.dispatch(edit_user(this.props.id))}>
+          <Edit onClick={() => this.props.dispatch(edit_user(this.props.id))}>
             Edit User
-          </button>
+          </Edit>
           <Delete
             onClick={() => this.props.dispatch(delete_user(this.props.id))}
           >

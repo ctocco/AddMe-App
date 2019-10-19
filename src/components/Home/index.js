@@ -15,10 +15,8 @@ const WelcomeContainer = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
   margin-left: 25px;
-  border: 1px solid red;
   h1 {
     align-self: end;
-    border: 1px solid red;
     font-size: 3rem;
   }
   h3 {
