@@ -19,7 +19,7 @@ html {
     background-color: #F6FFFF;
     font-weight: light;
 
-    h1, h2, h3, a{
+    h1, h2, h3, a, button{
       font-weight: 300;
       margin: 0;
     }

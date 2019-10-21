@@ -1,7 +1,13 @@
 import { combineReducers } from "redux";
 
 const INITIAL_STATE = [
-  { id: 1, name: "claudio", password: "hello", email: "cl@combineReducers.com" }
+  {
+    id: 1,
+    name: "claudio",
+    password: "hello",
+    email: "cl@combineReducers.com"
+  },
+  { id: 2, name: "claudio", password: "hello", email: "cl@combineRducers.com" }
 ];
 
 const userReducer = (state = INITIAL_STATE, action) => {

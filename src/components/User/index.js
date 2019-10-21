@@ -4,12 +4,11 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 
 const Ul = styled.ul`
-  list-style-type: none;
+  background: white;
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 2fr 1fr 1fr;
-  width: 90%;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr 0.5fr;
+  grid-gap: 5px;
   margin: 0;
-  height: 2rem;
 `;
 
 const Delete = styled.button`
@@ -17,7 +16,6 @@ const Delete = styled.button`
   box-shadow: inset 0px 1px 0px 0px #ffffff;
   background-color: red;
   border-radius: 6px;
-  border: 1px solid #dcdcdc;
   display: inline-block;
   cursor: pointer;
   color: white;
@@ -31,7 +29,7 @@ const Edit = styled.button`
   box-shadow: inset 0px 1px 0px 0px #ffffff;
   background-color: red;
   border-radius: 6px;
-  border: 1px solid #dcdcdc;
+  // border: 1px solid #dcdcdc;
   display: inline-block;
   cursor: pointer;
   color: white;
@@ -44,11 +42,8 @@ const Edit = styled.button`
 const List = styled.li`
   display: flex;
   margin: 10px;
-  width: 100%;
   align-items: center;
   margin: 0;
-  border: 1px solid red;
-  height: 100%;
 `;
 
 class User extends PureComponent {
