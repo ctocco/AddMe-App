@@ -26,10 +26,14 @@ const UsersContainer = styled.div`
 
 const DisplayUsers = () => {
   const users = useSelector(state => state.user);
-
+  // article on how to use modals in apps
+  //https://stackoverflow.com/questions/35623656/how-can-i-display-a-modal-dialog-in-redux-that-performs-asynchronous-actions/35641680#35641680
   return (
     <DisplayUserContainer>
-      <Header>hello</Header>
+      <Header>
+        hello
+        <button>Add User</button>
+      </Header>
       {users.map(user => (
         <UsersContainer key={user.id}>
           {user.editing ? (
