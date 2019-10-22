@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "../src/components/NavBar";
 import UserForm from "../src/components/UserForm";
 import Home from "../src/components/Home";
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
 import DisplayUsers from "../src/components/DisplayUsers";
 import EditUser from "../src/components/EditUser";
 import styled from "styled-components";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Link } from "@reach/router";
+import { Link } from "@reach/router";
 import styled from "styled-components";
 import key from "../../assets/icons/key.svg";
 import home from "../../assets/icons/home.svg";
@@ -50,22 +50,22 @@ const NavBar = () => {
     <Nav>
       <LogoContainer>
         <Circle>
-          <img src={key} />
+          <img src={key} alt={"placeholder of a key"} />
         </Circle>
         <h1>Admin</h1>
       </LogoContainer>
 
       <LinksContainer>
         <Link to="/">
-          <img src={home} />
+          <img src={home} alt={"icon of home button"} />
           <NavLink>Home</NavLink>
         </Link>
         <Link to="/viewusers">
-          <img src={view_users} />
+          <img src={view_users} alt={"icon of view users button"} />
           <NavLink>View Users</NavLink>
         </Link>
         <Link to="/addusers">
-          <img src={add_user} />
+          <img src={add_user} alt={"icon of add user button"} />
           <NavLink>Add Users</NavLink>
         </Link>
       </LinksContainer>
