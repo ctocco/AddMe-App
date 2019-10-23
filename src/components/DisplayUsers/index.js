@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import User from "../User";
+import UserForm from "../UserForm";
+import Modal from "react-modal";
 import EditUser from "../EditUser";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
@@ -26,14 +28,32 @@ const UsersContainer = styled.div`
 
 const DisplayUsers = () => {
   const users = useSelector(state => state.user);
+  const [isAddUser, setAddUser] = useState(false);
   // article on how to use modals in apps
   //https://stackoverflow.com/questions/35623656/how-can-i-display-a-modal-dialog-in-redux-that-performs-asynchronous-actions/35641680#35641680
+
+  const handleAddUser = () => {
+    setAddUser(!isAddUser);
+  };
+
+  const closeModal = () => {
+    setAddUser(!isAddUser);
+  };
+
   return (
     <DisplayUserContainer>
       <Header>
         hello
-        <button>Add User</button>
+        <button onClick={handleAddUser}>Add User</button>
       </Header>
+      <Modal
+        isOpen={isAddUser}
+        contentLabel="Example Modal"
+        onRequestClose={closeModal}
+      >
+        <UserForm />
+        <button onClick={closeModal}>Add User</button>
+      </Modal>
       {users.map(user => (
         <UsersContainer key={user.id}>
           {user.editing ? (
