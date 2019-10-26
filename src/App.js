@@ -1,11 +1,13 @@
 import React from "react";
+import posed, { PoseGroup } from "react-pose";
 import NavBar from "../src/components/NavBar";
 import UserForm from "../src/components/UserForm";
 import Home from "../src/components/Home";
-import { Router } from "@reach/router";
+import { Router, Location } from "@reach/router";
 import DisplayUsers from "../src/components/DisplayUsers";
 import EditUser from "../src/components/EditUser";
 import styled from "styled-components";
+
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
@@ -33,16 +35,28 @@ const AppContainer = styled.div`
 `;
 
 const App = () => {
+  const RoutesContainer = posed.div({
+    enter: { opacity: 1 },
+    exit: { opacity: 0 }
+  });
   return (
     <AppContainer>
       <GlobalStyles />
       <NavBar />
-      <Router>
-        <Home path="/" />
-        <UserForm path="addusers" />
-        <DisplayUsers path="/viewusers" />
-        <EditUser path="/edituser" />
-      </Router>
+      <Location>
+        {({ location }) => (
+          <PoseGroup>
+            <RoutesContainer key={location.key}>
+              <Router location={location}>
+                <Home path="/" />
+                <UserForm path="addusers" />
+                <DisplayUsers path="/viewusers" />
+                <EditUser path="/edituser" />
+              </Router>
+            </RoutesContainer>
+          </PoseGroup>
+        )}
+      </Location>
     </AppContainer>
   );
 };

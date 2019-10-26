@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 import styled from "styled-components";
-import key from "../../assets/icons/key.svg";
+import AdminPic from "../../assets/img/AdminPic.png";
 import home from "../../assets/icons/home.svg";
 import add_user from "../../assets/icons/add_user.svg";
 import view_users from "../../assets/icons/view_users.svg";
@@ -21,6 +21,7 @@ const LogoContainer = styled.div`
   text-align: center;
   align-content: center;
   color: white;
+  grid-gap: 5px;
 `;
 
 const Circle = styled.div`
@@ -50,7 +51,7 @@ const NavBar = () => {
     <Nav>
       <LogoContainer>
         <Circle>
-          <img src={key} alt={"placeholder of a key"} />
+          <img src={AdminPic} alt={"placeholder of a key"} />
         </Circle>
         <h1>Admin</h1>
       </LogoContainer>
