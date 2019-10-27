@@ -1,12 +1,13 @@
 import React, { PureComponent } from "react";
 import { delete_user, edit_user } from "../../redux/action_creators/actions";
 import styled from "styled-components";
+import OptionButton from "../../assets/icons/optionButton.svg";
 import { connect } from "react-redux";
 
 const Ul = styled.ul`
   background: white;
   display: grid;
-  grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr 0.5fr;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
   grid-gap: 5px;
   margin: 0;
 `;
@@ -47,6 +48,12 @@ const List = styled.li`
 `;
 
 class User extends PureComponent {
+  handleChange = e => {
+    if (e.target.value === "edit")
+      this.props.dispatch(edit_user(this.props.id));
+    if (e.target.value === "delete")
+      this.props.dispatch(delete_user(this.props.id));
+  };
   render() {
     return (
       <div>
@@ -55,14 +62,12 @@ class User extends PureComponent {
           <List>{this.props.name}</List>
           <List>{this.props.password}</List>
           <List>{this.props.email}</List>
-          <Edit onClick={() => this.props.dispatch(edit_user(this.props.id))}>
-            Edit User
-          </Edit>
-          <Delete
-            onClick={() => this.props.dispatch(delete_user(this.props.id))}
-          >
-            Delete User
-          </Delete>
+          <img src={OptionButton} />
+          <select src={OptionButton} onChange={this.handleChange}>
+            <option> </option>
+            <option value="edit">edit user</option>
+            <option value="delete">Delete User</option>
+          </select>
         </Ul>
       </div>
     );

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
-
 import { add_user } from "../../redux/action_creators/actions.js";
 import styled from "styled-components";
 
@@ -174,9 +173,7 @@ const UserForm = () => {
             type="email"
             required
           />
-          {/* <Link to={"/showUsers"}> */}
           <Submit type="submit">Submit</Submit>
-          {/* </Link> */}
         </form>
       </div>
     </AddUserContainer>
