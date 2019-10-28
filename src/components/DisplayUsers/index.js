@@ -9,6 +9,8 @@ import styled from "styled-components";
 const Header = styled.header`
   border-bottom: 1px grey solid;
   grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 `;
 
 const DisplayUserContainer = styled.div`
@@ -21,9 +23,14 @@ const DisplayUserContainer = styled.div`
 
 const UsersContainer = styled.div`
   width: 100%;
-  border: 1px solid red;
   background: white;
   grid-column: 2/5;
+  min-height: 50px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 `;
 
 const DisplayUsers = () => {
@@ -43,8 +50,13 @@ const DisplayUsers = () => {
   return (
     <DisplayUserContainer>
       <Header>
-        hello
-        <button onClick={handleAddUser}>Add User</button>
+        <h1>Display Users</h1>
+        <div>
+          <select>
+            <option>name</option>
+          </select>
+          <button onClick={handleAddUser}>Add User</button>
+        </div>
       </Header>
       <Modal
         isOpen={isAddUser}

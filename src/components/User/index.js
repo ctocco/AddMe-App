@@ -1,5 +1,4 @@
 import React, { PureComponent } from "react";
-import SelectForm from "./Select/index";
 import { delete_user, edit_user } from "../../redux/action_creators/actions";
 import styled from "styled-components";
 import OptionButton from "../../assets/icons/optionButton.svg";
@@ -14,9 +13,8 @@ const Ul = styled.ul`
 `;
 
 const List = styled.li`
-  display: flex;
   margin: 10px;
-  align-items: center;
+  list-style: none;
   margin: 0;
 `;
 
@@ -57,7 +55,7 @@ class User extends PureComponent {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Ul>
           <List>{this.props.id}</List>
           <List>{this.props.name}</List>
@@ -82,7 +80,7 @@ class User extends PureComponent {
             ) : null}
           </div>
         </Ul>
-      </div>
+      </React.Fragment>
     );
   }
 }
