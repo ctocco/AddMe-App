@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 const Ul = styled.ul`
   background: white;
   display: grid;
-  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr;
   grid-gap: 5px;
   margin: 0;
 `;
@@ -16,16 +16,6 @@ const List = styled.li`
   margin: 10px;
   list-style: none;
   margin: 0;
-`;
-
-const CustomSelect = styled.div`
-  border: 1px solid red;
-  max-width: 60px;
-  background-image: url(optionButton.svg);
-  select {
-    -webkit-appearance: none;
-    border: 1px solid #fff;
-  }
 `;
 
 class User extends PureComponent {
@@ -61,25 +51,22 @@ class User extends PureComponent {
           <List>{this.props.name}</List>
           <List>{this.props.password}</List>
           <List>{this.props.email}</List>
-          <div
-            className="dropdown"
-            style={{ background: "red", width: "200px" }}
-          >
-            <div className="button" onClick={this.showDropdownMenu}>
-              My Setting
-            </div>
-            {this.state.displayMenu ? (
-              <ul>
-                <li value="edit" onClick={e => this.handleChange(e)}>
-                  Edit User
-                </li>
-                <li value="delete" onClick={this.handleChange}>
-                  Delete User
-                </li>
-              </ul>
-            ) : null}
-          </div>
         </Ul>
+        <div className="dropdown">
+          <div className="button" onClick={this.showDropdownMenu}>
+            <img src={OptionButton} />
+          </div>
+          {this.state.displayMenu ? (
+            <ul>
+              <List value="edit" onClick={e => this.handleChange(e)}>
+                Edit User
+              </List>
+              <List value="delete" onClick={this.handleChange}>
+                Delete User
+              </List>
+            </ul>
+          ) : null}
+        </div>
       </React.Fragment>
     );
   }
