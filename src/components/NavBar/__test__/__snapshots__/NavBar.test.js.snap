@@ -16,7 +16,9 @@ exports[`renders 1`] = `
           src="AdminPic.png"
         />
       </div>
-      <h1>
+      <h1
+        data-testid="h1"
+      >
         Admin
       </h1>
     </div>
@@ -27,41 +29,47 @@ exports[`renders 1`] = `
         aria-current="page"
         href="/"
       >
-        <img
-          alt="icon of home button"
-          src="home.svg"
-        />
-      </a>
-      <a
-        class="sc-bxivhb gyztPx"
-      >
-        Home
+        <div
+          class="sc-bxivhb iYyxbw"
+        >
+          <img
+            alt="icon of home button"
+            src="home.svg"
+          />
+          <div>
+            Home
+          </div>
+        </div>
       </a>
       <a
         href="/viewusers"
       >
-        <img
-          alt="icon of view users button"
-          src="view_users.svg"
-        />
-      </a>
-      <a
-        class="sc-bxivhb gyztPx"
-      >
-        View Users
+        <div
+          class="sc-bxivhb iYyxbw"
+        >
+          <img
+            alt="icon of view users button"
+            src="view_users.svg"
+          />
+          <div>
+            View Users
+          </div>
+        </div>
       </a>
       <a
         href="/addusers"
       >
-        <img
-          alt="icon of add user button"
-          src="add_user.svg"
-        />
-      </a>
-      <a
-        class="sc-bxivhb gyztPx"
-      >
-        Add Users
+        <div
+          class="sc-bxivhb iYyxbw"
+        >
+          <img
+            alt="icon of add user button"
+            src="add_user.svg"
+          />
+          <div>
+            Add Users
+          </div>
+        </div>
       </a>
     </section>
     <div>

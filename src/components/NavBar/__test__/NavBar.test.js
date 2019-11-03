@@ -7,9 +7,11 @@ import {
   waitForElement,
   cleanup
 } from "@testing-library/react";
-import NavBar from "../index";
 
-afterEach(cleanup);
+import NavBar from "../index";
+//import "jest-dom/extend-expect";
+
+afterEach(cleanup); // cleans up
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
@@ -21,5 +23,6 @@ test("renders", () => {
 });
 
 it("inserts text in H1", () => {
-  const { getByTestId, getByText } = render(<NavBar text="Hello!" />);
+  const { getByTestId, getByText } = render(<NavBar text="Admin" />);
+  expect(getByTestId("h1")).toHaveTextContent("Admin");
 });
