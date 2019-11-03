@@ -6,13 +6,14 @@ exports[`renders 1`] = `
     class="sc-bdVaJa doDQFS"
   >
     <div
-      class="sc-bwzfXH iXaUif"
+      class="sc-bwzfXH hVgNAy"
     >
       <div
         class="sc-htpNat hPucVN"
       >
         <img
-          src="key.svg"
+          alt="placeholder of a key"
+          src="AdminPic.png"
         />
       </div>
       <h1>
@@ -27,6 +28,7 @@ exports[`renders 1`] = `
         href="/"
       >
         <img
+          alt="icon of home button"
           src="home.svg"
         />
       </a>
@@ -39,6 +41,7 @@ exports[`renders 1`] = `
         href="/viewusers"
       >
         <img
+          alt="icon of view users button"
           src="view_users.svg"
         />
       </a>
@@ -51,6 +54,7 @@ exports[`renders 1`] = `
         href="/addusers"
       >
         <img
+          alt="icon of add user button"
           src="add_user.svg"
         />
       </a>
