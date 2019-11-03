@@ -4,7 +4,7 @@ import styled from "styled-components";
 import OptionButton from "../../assets/icons/optionButton.svg";
 import { connect } from "react-redux";
 
-const Ul = styled.ul`
+const UserContainer = styled.ul`
   background: white;
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 1fr;
@@ -16,6 +16,20 @@ const List = styled.li`
   margin: 10px;
   list-style: none;
   margin: 0;
+`;
+
+const DropdownContent = styled.div`
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+`;
+
+const Dropdown = styled.div`
+  position: relative;
+  display: inline-block;
 `;
 
 class User extends PureComponent {
@@ -31,6 +45,10 @@ class User extends PureComponent {
     this.setState({ displayMenu: !this.state.displayMenu });
   };
 
+  hideDropdownMenu = () => {
+    this.setState({ displayMenu: !this.state.displayMenu });
+  };
+
   handleChange = e => {
     if (e.target.innerHTML === "Edit User")
       this.props.dispatch(edit_user(this.props.id));
@@ -39,35 +57,29 @@ class User extends PureComponent {
     this.hideDropdownMenu();
   };
 
-  hideDropdownMenu = () => {
-    this.setState({ displayMenu: !this.state.displayMenu });
-  };
-
   render() {
     return (
-      <React.Fragment>
-        <Ul>
+      <>
+        <UserContainer>
           <List>{this.props.id}</List>
           <List>{this.props.name}</List>
           <List>{this.props.password}</List>
           <List>{this.props.email}</List>
-        </Ul>
-        <div className="dropdown">
-          <div className="button" onClick={this.showDropdownMenu}>
-            <img src={OptionButton} />
-          </div>
+        </UserContainer>
+        <Dropdown>
+          <img src={OptionButton} onClick={this.showDropdownMenu} />
           {this.state.displayMenu ? (
-            <ul>
-              <List value="edit" onClick={e => this.handleChange(e)}>
+            <DropdownContent>
+              <button value="edit" onClick={e => this.handleChange(e)}>
                 Edit User
-              </List>
-              <List value="delete" onClick={this.handleChange}>
+              </button>
+              <button value="delete" onClick={this.handleChange}>
                 Delete User
-              </List>
-            </ul>
+              </button>
+            </DropdownContent>
           ) : null}
-        </div>
-      </React.Fragment>
+        </Dropdown>
+      </>
     );
   }
 }
