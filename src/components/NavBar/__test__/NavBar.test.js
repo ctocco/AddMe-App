@@ -7,6 +7,7 @@ import {
   waitForElement,
   cleanup
 } from "@testing-library/react";
+import renderer from "react-test-renderer";
 
 import NavBar from "../index";
 //import "jest-dom/extend-expect";
@@ -25,4 +26,9 @@ test("renders", () => {
 it("inserts text in H1", () => {
   const { getByTestId, getByText } = render(<NavBar text="Admin" />);
   expect(getByTestId("h1")).toHaveTextContent("Admin");
+});
+
+it("matches snapshot", () => {
+  const tree = renderer.create(<h1>Admin</h1>).toJSON;
+  expect(tree).toMatchSnapshot();
 });
