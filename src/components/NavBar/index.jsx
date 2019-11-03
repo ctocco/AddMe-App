@@ -33,9 +33,10 @@ const Circle = styled.div`
   border-radius: 50%;
 `;
 
-const NavLink = styled.a`
+const NavLink = styled.div`
+  display: flex;
   color: white;
-  padding-left: 10px;
+  align-items: center;
 `;
 
 const LinksContainer = styled.section`
@@ -53,21 +54,27 @@ const NavBar = () => {
         <Circle>
           <img src={AdminPic} alt={"placeholder of a key"} />
         </Circle>
-        <h1>Admin</h1>
+        <h1 data-testid="h1">Admin</h1>
       </LogoContainer>
 
       <LinksContainer>
         <Link to="/">
-          <img src={home} alt={"icon of home button"} />
-          <NavLink>Home</NavLink>
+          <NavLink>
+            <img src={home} alt={"icon of home button"} />
+            <div>Home</div>
+          </NavLink>
         </Link>
         <Link to="/viewusers">
-          <img src={view_users} alt={"icon of view users button"} />
-          <NavLink>View Users</NavLink>
+          <NavLink>
+            <img src={view_users} alt={"icon of view users button"} />
+            <div>View Users</div>
+          </NavLink>
         </Link>
         <Link to="/addusers">
-          <img src={add_user} alt={"icon of add user button"} />
-          <NavLink>Add Users</NavLink>
+          <NavLink>
+            <img src={add_user} alt={"icon of add user button"} />
+            <div>Add Users</div>
+          </NavLink>
         </Link>
       </LinksContainer>
 
