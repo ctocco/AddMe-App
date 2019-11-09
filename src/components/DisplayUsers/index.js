@@ -21,6 +21,15 @@ const DisplayUserContainer = styled.div`
   grid-row-gap: 20px;
 `;
 
+const HeaderContainer = styled.div``;
+
+const SelectorContainer = styled.div`
+  display: grid;
+  justify-content: flex-end;
+  grid-template-rows: 1fr 1fr;
+  border: 1px solid red;
+`;
+
 const UsersContainer = styled.div`
   width: 100%;
   background: white;
@@ -50,13 +59,23 @@ const DisplayUsers = () => {
   return (
     <DisplayUserContainer>
       <Header>
-        <h1>Display Users</h1>
-        <div>
+        <HeaderContainer>
+          <h1>Display Users</h1>
           <select>
             <option>name</option>
           </select>
-          <button onClick={handleAddUser}>Add User</button>
-        </div>
+        </HeaderContainer>
+        <SelectorContainer>
+          <div>
+            <select>
+              <option>English</option>
+              <option>German</option>
+            </select>
+          </div>
+          <div>
+            <button onClick={handleAddUser}>Add User</button>
+          </div>
+        </SelectorContainer>
       </Header>
       <Modal
         isOpen={isAddUser}
